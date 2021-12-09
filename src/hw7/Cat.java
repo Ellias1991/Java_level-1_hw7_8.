@@ -21,11 +21,8 @@ public class Cat {
 
     public void eat(Plate plate) {
         plate.decreaseFood(appetite);
-        if (appetite == satiety) {
-            System.out.println("Cat " + name + " eat");
-        } else {
-            System.out.println("Cat " + name + " didn't eat");
-        }
+        System.out.println("Cat " + name + " eat");
+
 
     }
 }
