@@ -1,31 +1,33 @@
 package hw7;
 
 public class Plate {
-    public int food;
+    private int food;
 
     public Plate(int food) {
         this.food = food;
     }
 
 
-    public void decreaseFood(int amount) {
-        if (amount < food) {
-            food -= food;
+    public boolean decreaseFood(int amount) {///количество еды в тарелке не будет отрицательным
+        if (food >= amount) {
+            food -= amount;
+            return true;
         } else {
-            food = 0;
-
+            return false;
         }
+    }
+
+    public int getFood() {
+        return food;
 
     }
 
-    public void addFood() {
-        food += food;
+    public boolean addFood(int amount) {
+        if (amount < 0) {
+            return false;
+        } else {
+            food += amount;
+        }
+        return true;
     }
-
-
-    public void info() {
-        System.out.println("plate " + food);
-    }
-
 }
-
