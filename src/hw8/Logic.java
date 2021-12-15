@@ -34,7 +34,7 @@ import java.util.Scanner;
             aiTurn();
             printMap();
             if (checkWinLines(DOT_O, DOTS_TO_WIN)) {
-                System.out.println("Копьютер победил.");
+                System.out.println("Компьютер победил.");
                 return;
             }
             if (isFull()) {

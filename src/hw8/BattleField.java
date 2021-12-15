@@ -20,30 +20,18 @@ import java.awt.event.MouseEvent;
 
         public BattleField(GameWindow gameWindow) {
             this.gameWindow = gameWindow;
-            setBackground(Color.ORANGE);
+            setBackground(Color.YELLOW);
 
 
-            addMouseListener(new MouseAdapter() {
-                @Override
-                public void mouseReleased(MouseEvent e) {
-                    int cellX = e.getX() / cellWidth;
-                    int cellY = e.getY() / cellHeight;
 
-                    if (!Logic.gameFinished) {
-                        Logic.humanTurn(cellX, cellY);
-                    }
-
-                }
-            });
         }
+            void startNewGame(int size, int winningLength) {
+                this.size = size;
+                this.winningLength = winningLength;
 
-        void startNewGame(int size, int winningLength) {
-            this.size = size;
-            this.winningLength = winningLength;
-
-            isInit = true;
-            repaint();
-        }
+                isInit = true;
+                repaint();
+            }
 
         @Override
         protected void paintComponent(Graphics g) {
@@ -78,9 +66,9 @@ import java.awt.event.MouseEvent;
             }
             repaint();
 
-//        g.setColor(Color.RED);
-//        ((Graphics2D)g).setStroke(new BasicStroke(5f));
-//        g.drawLine(100, 100, 300, 400);
+       g.setColor(Color.RED);
+       ((Graphics2D)g).setStroke(new BasicStroke(5f));
+        g.drawLine(100, 100, 300, 400);
 
         }
 
