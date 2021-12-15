@@ -20,8 +20,8 @@ public class GameWindow extends JFrame {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tic Tac Toe");
 
-        settingWindow=new SettingWindow(this);
-        battleField= new BattleField(this);
+        settingWindow = new SettingWindow(this);
+        battleField = new BattleField(this);
         add(battleField, BorderLayout.CENTER);
 
         JPanel panel = new JPanel(new GridLayout(1, 2));
@@ -38,14 +38,15 @@ public class GameWindow extends JFrame {
         btnNewGame.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            settingWindow.setVisible(true);
+                settingWindow.setVisible(true);
             }
         });
 
         setVisible(true);
     }
+
     void startNewGame(int size, int winningLength) {
-     battleField.startNewGame(size,winningLength);
+        battleField.startNewGame(size, winningLength);
     }
 
 }
